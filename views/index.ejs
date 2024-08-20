@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Bloggie</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courgette&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courgette&family=Playwrite+BE+WAL:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="playwrite-be-wal">My Bloggie</h1>
+        <a id="homeBtn" href="/">Home</a>
+        <a id="newPostBtn" href="/new">New Post</a>
+        <form id="id" method="POST">
+          <input type="text" id="idInput" placeholder="Search by id" name="id" required>
+          <input id="get" type="submit" value="Search" formaction="/get-id">
+        </form>
+        <% if (typeof content !== 'undefined' && content) { %>
+          <div class="error">
+              <p><%= content %></p>
+          </div>
+      <% } %>
+  
+      <% if (postId) { %>
+          <ul id="postsList">
+              <li>
+                  <h2 class="courgette-regular"><%= post.title %></h2>
+                  <small><%= post.date %></small>
+                  <p><%= post.content %></p>
+                  <small>By: <%= post.author %></small>
+                  <a class="edit" href="/edit/<%= post.id %>">Edit</a>
+                  <a class="delete" href="/api/posts/delete/<%= post.id %>">Delete</a>
+              </li>
+          </ul>
+      <% } else if (posts) { %>
+          <ul id="postsList">
+              <% posts.forEach(post => { %>
+                  <li>
+                      <h2 class="courgette-regular"><%= post.title %></h2>
+                      <small><%= post.date %></small>
+                      <p><%= post.content %></p>
+                      <small>By: <%= post.author %></small>
+                      <a class="edit" href="/edit/<%= post.id %>">Edit</a>
+                      <a class="delete" href="/api/posts/delete/<%= post.id %>">Delete</a>
+                  </li>
+              <% }); %>
+          </ul>
+      <% } %>
+     
+      </div>
+
+      <script src="/js/background.js"></script> 
+</body>
+</html>
