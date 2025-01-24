@@ -23,14 +23,13 @@ app.get("/", async (req, res) => {
 
   // Route to render the edit page
 app.get("/new", (req, res) => {
-    res.render("modify.ejs", { heading: "New Post", submit: "Create Post" });
+    res.render("modify.ejs", { submit: "Create Post" });
   });
   
   app.get("/edit/:id", async (req, res) => {
     try {
       const response = await axios.get(`${API_URL}/posts/${req.params.id}`);
       res.render("modify.ejs", {
-        heading: "Edit Post",
         submit: "Update Post",
         post: response.data,
       });

@@ -11,26 +11,28 @@ let posts = [
     {
       id: 1,
       title: "Exploring the Dystopian Worlds of Cyberpunk",
-      content:
-    "Cyberpunk is a subgenre of science fiction that explores a future where advanced technology and cybernetics intersect with societal decay and dystopian environments. Often set in neon-lit megacities, cyberpunk narratives delve into themes of corporate control, artificial intelligence, and the blurring line between human and machine. With its gritty, rebellious aesthetic, cyberpunk challenges our understanding of identity, freedom, and the impact of technology on society. From literature to films and video games, cyberpunk continues to captivate audiences with its dark, yet oddly prophetic vision of the future.",
+      content: `Cyberpunk is a subgenre of science fiction that explores a future where advanced technology and cybernetics intersect with societal decay and dystopian environments. Often set in neon-lit megacities, cyberpunk narratives delve into themes of corporate control, artificial intelligence, and the blurring line between human and machine. 
+        
+        With its gritty, rebellious aesthetic, cyberpunk challenges our understanding of identity, freedom, and the impact of technology on society. From literature to films and video games, cyberpunk continues to captivate audiences with its dark, yet oddly prophetic vision of the future.`,
       author: "Jordan Rivera",
-      date: "2024-09-13T15:30:00Z",
+      date: "September 13, 2024 at 03:30 PM",
     },
     {
       id: 2,
       title: "The Curious Origins of Lorem Ipsum",
-      content:
-        "Lorem Ipsum is a placeholder text that has been widely used in the printing and typesetting industry for centuries. Derived from a scrambled section of Cicero's work, 'De Finibus Bonorum et Malorum,' written in 45 BC, this nonsensical text has become a standard in the design world for simulating content. Despite its lack of meaning, Lorem Ipsum helps designers focus on layout and visual elements without the distraction of actual content. Over time, it has evolved into a universally recognized tool for creating prototypes, mockups, and templates, proving its enduring utility in the creative process.",
+      content: `Lorem Ipsum is a placeholder text that has been widely used in the printing and typesetting industry for centuries. Derived from a scrambled section of Cicero's work, 'De Finibus Bonorum et Malorum,' written in 45 BC, this nonsensical text has become a standard in the design world for simulating content. 
+      
+      Despite its lack of meaning, Lorem Ipsum helps designers focus on layout and visual elements without the distraction of actual content. Over time, it has evolved into a universally recognized tool for creating prototypes, mockups, and templates, proving its enduring utility in the creative process.`,
       author: "Samuel Green",
-      date: "2023-08-12T11:20:00Z",
+      date: "August 12, 2023 at 11:20 AM",
     },
     {
       id: 3,
-      title: "Sisterly Ties and Unspoken Bonds",
+      title: "The Complex Relationship Between Gamora and Nebula",
       content:
-       "Gamora and Nebula, the fierce and complex daughters of Thanos, share a bond that goes beyond sisterhood. Their tumultuous relationship, forged through rivalry and mutual trauma, gradually evolves into one of understanding, respect, and deep emotional connection. Both characters struggle with their identities, seeking redemption and purpose outside of their father's shadow. This shared journey could have provided the foundation for a powerful romantic relationship, where they find solace and healing in each other. Their contrasting personalities—Gamora's calm, rational demeanor and Nebula's fiery, impulsive nature—complement each other perfectly, making them an intriguing potential couple in the Marvel Universe.",
+       "Gamora and Nebula, the formidable daughters of Thanos, share a dynamic and intricate bond that has evolved throughout their journey in the Marvel Universe. Initially marked by rivalry and emotional scars, their relationship gradually transforms into one of mutual understanding and respect. Both characters grapple with their identities, seeking redemption and healing from the trauma inflicted by their father. Their contrasting personalities—Gamora’s calm, rational approach and Nebula’s fiery, impulsive nature—create an intriguing dynamic, offering a powerful exploration of sisterhood, personal growth, and the possibility of reconciliation.",
       author: "Mia Williams",
-      date: "2023-07-15T14:10:00Z",
+      date: "July 15, 2023 at 02:10 PM",
     },
   ];
 
@@ -57,7 +59,14 @@ app.post("/posts", (req, res) => {
       image: req.body.image, 
       content: req.body.content,
       author: req.body.author,
-      date: new Date(),
+      date: new Date().toLocaleString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: true
+      })
     };
     lastId = newId;
     posts.push(post);
