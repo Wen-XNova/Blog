@@ -1,1 +1,31 @@
-# Blog
+# Bloggie: Decoupled Full-Stack CRUD Application
+
+A full-stack blogging platform built with Node.js and Express. This project demonstrates backend API development, complete CRUD (Create, Read, Update, Delete) functionality, and a decoupled client-server architecture. 
+
+## Application Preview
+
+| Home Feed (READ) | Create Post (POST) | Edit Post (PATCH) |
+| :---: | :---: | :---: |
+| ![Feed](https://github.com/user-attachments/assets/c4d3abf5-0a71-4f33-9199-32bfb5f9cc13) | ![Create](./87bc2a72-170d-4c36-8214-e13d9a6d46f2.jpg) | ![Edit](./6fba4b01-c24b-4098-9bf7-3be41d2156f9.jpg) |
+| *Consuming the /posts API* | *Handling new entries* | *Updating existing data* |
+
+## Tech Stack
+* **Backend API:** Node.js, Express.js
+* **Frontend Server:** Node.js, Express.js, Axios
+* **View Engine:** EJS (Embedded JavaScript templating)
+* **Styling & UI:** Vanilla CSS, Client-side JavaScript
+
+## Core Technical Features
+* **Decoupled Architecture:** Built using a microservice-style approach. A dedicated backend REST API (`index.js`) manages data state, while a separate frontend server (`server.js`) handles user routing and view rendering via API consumption.
+* **RESTful API Design:** Implements clean, standard HTTP methods (GET, POST, PATCH, DELETE) for complete resource management.
+* **In-Memory Data Store:** Utilizes local array manipulation to simulate database persistence, handling unique ID generation and timestamp formatting on the server side.
+* **Dynamic Client UI:** Features server-side rendering with EJS for dynamic content delivery, coupled with client-side DOM manipulation (`background.js`) to randomize the aesthetic experience on page load.
+
+## How to Run Locally
+
+Because this project uses a decoupled architecture, you need to start **both** the API server and the Frontend server to run the application fully.
+
+1. Clone the repository and navigate into the project directory.
+2. Install the required Node dependencies:
+   ```bash
+   npm install
