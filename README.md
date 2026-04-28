@@ -6,7 +6,7 @@ A full-stack blogging platform built with Node.js and Express. This project demo
 
 | Home Feed (READ) | Create Post (POST) | Edit Post (PATCH) |
 | :---: | :---: | :---: |
-| ![Feed](https://github.com/user-attachments/assets/c4d3abf5-0a71-4f33-9199-32bfb5f9cc13) | ![Create](./87bc2a72-170d-4c36-8214-e13d9a6d46f2.jpg) | ![Edit](./6fba4b01-c24b-4098-9bf7-3be41d2156f9.jpg) |
+| ![Feed](https://github.com/user-attachments/assets/c4d3abf5-0a71-4f33-9199-32bfb5f9cc13) | ![Create](https://github.com/user-attachments/assets/d04de0b1-866f-40f4-8a63-044757251f55) | ![Edit](https://github.com/user-attachments/assets/da239bf8-674e-43f8-bc54-7af236a697e0) |
 | *Consuming the /posts API* | *Handling new entries* | *Updating existing data* |
 
 ## Tech Stack
